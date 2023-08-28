@@ -1,497 +1,415 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="output.css" />
-    <title>Portfolio</title>
-  </head>
+<html lang="en" class="overflow-x-hidden">
 
-  <body
-    class="bg-[#FAF7F5]"
-    x-data="{navOpen: false, scrolledFromTop: false}"
-    x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"
-    @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"
-    :class="{
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="output.css" />
+  <title>Portfolio</title>
+</head>
+
+<body class="bg-[#FAF7F5] overflow-hidden overflow-x-hidden" x-data="{navOpen: false, scrolledFromTop: false}"
+  x-init="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"
+  @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false" :class="{
 'overflow-hidden': navOpen,
-'overflow-scroll': !navOpen
-}"
-  >
-    <header
-      class="flex items-center justify-between w-full h-24 p-4 transition-all duration-200 md:px-12"
-      :class="{'h-24': !scrolledFromTop, 'h-14': scrolledFromTop}"
-    >
-      <a href="#home">
-        <h1 class="text-3xl font-bold underline">Arihant Jain</h1>
-      </a>
-      <nav>
-        <button class="md:hidden" @click="navOpen = !navOpen">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8 text-[#F28C84]"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-        <ul
-          class="fixed left-0 right-0 min-h-screen bg-[#FAF7F5] px-4 pt-8 space-y-4 transform transition duration-300 translate-x-full md:relative md:flex md:space-x-10 md:min-h-0 md:px-0 md:py-0 md:space-y-0 md:translate-x-0"
-          :class="{'translate-x-full': !navOpen}"
-          :class="{'translate-x-0': navOpen}"
-        >
-          <li class="hover:underline">
-            <a href="#home" @click="navOpen = false">Home</a>
-          </li>
-          <li class="hover:underline">
-            <a href="#about" @click="navOpen = false">About</a>
-          </li>
-          <li class="hover:underline">
-            <a href="#services" @click="navOpen = false">Services</a>
-          </li>
-          <li class="hover:underline">
-            <a href="#experience" @click="navOpen = false">Work Experience</a>
-          </li>
-          <li class="hover:underline">
-            <a href="#contact" @click="navOpen = false">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <section id="home" class="flex flex-col p-5 md:flex-row md:justify-between">
-      <div class="p-10 md:mt-10">
-        <h1
-          class="text-center text-[#212121] text-3xl font-semibold mb-5 md:text-left md:text-7xl"
-        >
-          I'm Arihant Jain
-        </h1>
-        <p class="text-[#717170] md:text-left text-center md:w-[550px]">
-          I am a professional full stack developer with three internship
-          experiences, proficient in HTML, CSS, JavaScript, Tailwind CSS,
-          ReactJS, NextJS, NodeJS, Django, GraphQL, MongoDB, and PostgreSQL.
-        </p>
-        <div class="flex items-center justify-center md:justify-start">
-          <a href="#" class="text-center">
-            <button
-              class="border-2 bg-[#2270E2] rounded-lg px-5 py-3 text-white mt-5 outline-none"
-            >
-              Learn More
-            </button>
-          </a>
-        </div>
-      </div>
-      <img
-        src="https://images.unsplash.com/photo-1484515991647-c5760fcecfc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbGUlMjBkb2luZyUyMGNvZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
-        alt=""
-      />
-    </section>
-    <section id="about" class="p-5 mt-10">
-      <div class="mb-10">
-        <h2 class="text-2xl text-center">About Me</h2>
-        <hr
-          class="w-24 h-1 mx-auto my-2 bg-green-500 border-0 rounded md:my-2"
-        />
-      </div>
-      <div
-        class="flex flex-col min-h-screen gap-4 md:flex-row md:justify-around"
-      >
-        <div class="overflow-hidden">
-          <h1 class="text-3xl font-semibold md:w-[500px] md:mt-5">
-            Experienced Full Stack Developer with Expertise in HTML, CSS,
-            JavaScript, and Various Frameworks
-          </h1>
-          <hr class="w-24 h-1 my-1 bg-green-500 border-0 rounded md:my-2" />
-          <p class="mt-5 md:w-[550px] text-[#676766]">
-            I am a highly skilled full stack developer with three years of
-            internship experience in the field. I possess a strong command over
-            various languages and frameworks, including HTML, CSS, JavaScript,
-            Tailwind CSS, ReactJS, NextJS, NodeJS, Django, GraphQL, MongoDB, and
-            PostgreSQL. My expertise lies in developing robust and efficient web
-            applications. I am dedicated, detail-oriented, and thrive in
-            collaborative environments.
-          </p>
-          <button
-            class="border-0 mt-5 text-white rounded-md px-4 py-2 bg-[#2270E2]"
-          >
-            <a href="#contact" >Contact Me</a>
-            
+}">
+  <header class="flex items-center justify-between w-full h-24 p-4 transition-all duration-200 md:px-12"
+    :class="{'h-24': !scrolledFromTop, 'h-14': scrolledFromTop}">
+    <a href="#home">
+      <h1 class="text-3xl font-bold underline">Arihant Jain</h1>
+    </a>
+    <nav>
+      <button class="md:hidden" @click="navOpen = !navOpen">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#F28C84]" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <ul
+        class="fixed left-0 right-0 min-h-screen bg-[#FAF7F5] px-4 pt-8 space-y-4 transform transition duration-300 translate-x-full md:relative md:flex md:space-x-10 md:min-h-0 md:px-0 md:py-0 md:space-y-0 md:translate-x-0"
+        :class="{'translate-x-full': !navOpen}" :class="{'translate-x-0': navOpen}">
+        <li class="hover:underline">
+          <a href="#home" @click="navOpen = false">Home</a>
+        </li>
+        <li class="hover:underline">
+          <a href="#about" @click="navOpen = false">About</a>
+        </li>
+        <li class="hover:underline">
+          <a href="#services" @click="navOpen = false">Services</a>
+        </li>
+        <li class="hover:underline">
+          <a href="#experience" @click="navOpen = false">Work Experience</a>
+        </li>
+        <li class="hover:underline">
+          <a href="#contact" @click="navOpen = false">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section id="home" class="flex flex-col p-5 md:flex-row md:justify-between">
+    <div class="p-10 md:mt-10">
+      <h1 class="text-center text-[#212121] text-3xl font-semibold mb-5 md:text-left md:text-7xl">
+        I'm Arihant Jain
+      </h1>
+      <p class="text-[#717170] md:text-left text-center md:w-[550px]">
+        I am a professional full stack developer with three internship
+        experiences, proficient in HTML, CSS, JavaScript, Tailwind CSS,
+        ReactJS, NextJS, NodeJS, Django, GraphQL, MongoDB, and PostgreSQL.
+      </p>
+      <div class="flex items-center justify-center md:justify-start">
+        <a href="#" class="text-center">
+          <button class="border-2 bg-[#2270E2] rounded-lg px-5 py-3 text-white mt-5 outline-none">
+            Learn More
           </button>
-        </div>
-        <img
-          class="md:max-w-[50%] md:h-[50%]"
-          src="https://10web-site.ai/57/wp-content/uploads/sites/60/2023/08/glenn-carstens-peters-npxXWgQ33ZQ-unsplash_l6F2ae7b.webp"
-          alt=""
-        />
+        </a>
       </div>
-    </section>
-    <section id="services" class="min-h-screen mt-10 md:mt-0">
-      <div class>
-        <h1 class="text-3xl text-center md:text-4xl">
-          What Services I'm Providing
+    </div>
+    <img
+      src="https://images.unsplash.com/photo-1484515991647-c5760fcecfc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbGUlMjBkb2luZyUyMGNvZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
+      alt="" />
+  </section>
+  <section id="about" class="p-5 mt-10">
+    <div class="mb-10">
+      <h2 class="text-2xl text-center">About Me</h2>
+      <hr class="w-24 h-1 mx-auto my-2 bg-green-500 border-0 rounded md:my-2" />
+    </div>
+    <div class="flex flex-col min-h-screen gap-4 md:flex-row md:justify-around">
+      <div class="overflow-hidden">
+        <h1 class="text-3xl font-semibold md:w-[500px] md:mt-5">
+          Experienced Full Stack Developer with Expertise in HTML, CSS,
+          JavaScript, and Various Frameworks
         </h1>
-        <hr
-          class="w-24 h-1 mx-auto my-2 bg-green-500 border-0 rounded md:w-32 md:my-2"
-        />
+        <hr class="w-24 h-1 my-1 bg-green-500 border-0 rounded md:my-2" />
+        <p class="mt-5 md:w-[550px] text-[#676766]">
+          I am a highly skilled full stack developer with three years of
+          internship experience in the field. I possess a strong command over
+          various languages and frameworks, including HTML, CSS, JavaScript,
+          Tailwind CSS, ReactJS, NextJS, NodeJS, Django, GraphQL, MongoDB, and
+          PostgreSQL. My expertise lies in developing robust and efficient web
+          applications. I am dedicated, detail-oriented, and thrive in
+          collaborative environments.
+        </p>
+        <button class="border-0 mt-5 text-white rounded-md px-4 py-2 bg-[#2270E2]">
+          <a href="#contact">Contact Me</a>
+        </button>
       </div>
-      <div class="grid gap-5 p-5 md:grid-cols-3 md:gap-10">
-        <div class="mt-10">
-          <img
-            class="object-cover w-full h-96"
-            src="https://appinventiv.com/wp-content/uploads/sites/1/2018/05/API-Development-Guide.png"
-            alt="API Development"
-          />
-          <a href="#">
-            <h1 class="mt-2 text-xl font-bold">
-              Professional API Development Services
-            </h1>
-          </a>
-          <p class="text-[#676766] mt-2 mb-2">
-            I am a full stack developer with experience in API development,
-            specializing in creating efficient and secure APIs for your
-            applications.
-          </p>
-          <a class="text-[#2270E2] text-base hover:underline" href="#"
-            >Read More</a
-          >
-        </div>
-        <div>
-          <img
-            class="object-contain w-full h-96"
-            src="https://www.spauldingridge.com/wp-content/uploads/2021/10/AI-01.png"
-            alt="Database Integration"
-          />
-          <a href="#">
-            <h1 class="mt-2 text-xl font-bold">
-              Expert Database Integration Services
-            </h1>
-          </a>
-          <p class="text-[#676766] mt-2 mb-2">
-            I offer professional database integration services, leveraging my
-            expertise in various technologies to seamlessly connect your
-            systems.
-          </p>
-          <a class="text-[#2270E2] text-base hover:underline" href="#"
-            >Read More</a
-          >
-        </div>
-        <div>
-          <img
-            class="md:w-full md:h-96 md:object-cover"
-            src="https://10web-site.ai/57/wp-content/uploads/sites/60/2023/08/leone-venter-VieM9BdZKFo-unsplash_l6F2ae7b.webp"
-            alt="Full Stack Development"
-          />
-          <a href="#">
-            <h1 class="mt-2 text-xl font-bold">
-              Professional Custom Web Development Services
-            </h1>
-          </a>
-          <p class="text-[#676766] mt-2 mb-2">
-            I offer custom web development services, utilizing my skills in
-            HTML, CSS, JS, Tailwind CSS, ReactJS, NextJS, NodeJS, Django,
-            GraphQL, MongoDB, and PostgreSQL.
-          </p>
-          <a class="text-[#2270E2] text-base hover:underline" href="#"
-            >Read More</a
-          >
-        </div>
+      <img class="md:max-w-[50%] md:h-[50%]"
+        src="https://10web-site.ai/57/wp-content/uploads/sites/60/2023/08/glenn-carstens-peters-npxXWgQ33ZQ-unsplash_l6F2ae7b.webp"
+        alt="" />
+    </div>
+  </section>
+  <section id="services" class="min-h-screen mt-10 md:mt-0">
+    <div class>
+      <h1 class="text-3xl text-center md:text-4xl">
+        What Services I'm Providing
+      </h1>
+      <hr class="w-24 h-1 mx-auto my-2 bg-green-500 border-0 rounded md:w-32 md:my-2" />
+    </div>
+    <div class="grid gap-5 p-5 md:grid-cols-3 md:gap-10">
+      <div class="mt-10">
+        <img class="object-cover w-full h-96"
+          src="https://appinventiv.com/wp-content/uploads/sites/1/2018/05/API-Development-Guide.png"
+          alt="API Development" />
+        <a href="#">
+          <h1 class="mt-2 text-xl font-bold">
+            Professional API Development Services
+          </h1>
+        </a>
+        <p class="text-[#676766] mt-2 mb-2">
+          I am a full stack developer with experience in API development,
+          specializing in creating efficient and secure APIs for your
+          applications.
+        </p>
+        <a class="text-[#2270E2] text-base hover:underline" href="#">Read More</a>
       </div>
-    </section>
-    <section id="experience" class="min-h-screen p-5 mt-10">
       <div>
-        <h1 class="text-3xl text-center md:text-4xl">Work Experience</h1>
-        <hr
-          class="w-24 h-1 mx-auto my-2 bg-green-500 border-0 rounded md:w-32 md:my-2"
-        />
+        <img class="object-contain w-full h-96"
+          src="https://www.spauldingridge.com/wp-content/uploads/2021/10/AI-01.png" alt="Database Integration" />
+        <a href="#">
+          <h1 class="mt-2 text-xl font-bold">
+            Expert Database Integration Services
+          </h1>
+        </a>
+        <p class="text-[#676766] mt-2 mb-2">
+          I offer professional database integration services, leveraging my
+          expertise in various technologies to seamlessly connect your
+          systems.
+        </p>
+        <a class="text-[#2270E2] text-base hover:underline" href="#">Read More</a>
       </div>
-      <div class="grid gap-4 mt-5 md:grid-cols-2 md:gap-4 md:mt-10">
-        <div class="border-2 rounded-md bg-[#FFFFFF] p-5">
-          <div class="flex flex-col justify-between md:flex-row">
-            <div>
-              <h1 class="mb-2 text-2xl font-semibold md:text-3xl">
-                Full Stack Developer Intern
-              </h1>
-            </div>
-            <div class="mb-2 -mt-1">2023/06 - 2023/07</div>
+      <div>
+        <img class="md:w-full md:h-96 md:object-cover"
+          src="https://10web-site.ai/57/wp-content/uploads/sites/60/2023/08/leone-venter-VieM9BdZKFo-unsplash_l6F2ae7b.webp"
+          alt="Full Stack Development" />
+        <a href="#">
+          <h1 class="mt-2 text-xl font-bold">
+            Professional Custom Web Development Services
+          </h1>
+        </a>
+        <p class="text-[#676766] mt-2 mb-2">
+          I offer custom web development services, utilizing my skills in
+          HTML, CSS, JS, Tailwind CSS, ReactJS, NextJS, NodeJS, Django,
+          GraphQL, MongoDB, and PostgreSQL.
+        </p>
+        <a class="text-[#2270E2] text-base hover:underline" href="#">Read More</a>
+      </div>
+    </div>
+  </section>
+  <section id="experience" class="min-h-screen p-5 mt-10">
+    <div>
+      <h1 class="text-3xl text-center md:text-4xl">Work Experience</h1>
+      <hr class="w-24 h-1 mx-auto my-2 bg-green-500 border-0 rounded md:w-32 md:my-2" />
+    </div>
+    <div class="grid gap-4 mt-5 md:grid-cols-2 md:gap-4 md:mt-10">
+      <div class="border-2 rounded-md bg-[#FFFFFF] p-5">
+        <div class="flex flex-col justify-between md:flex-row">
+          <div>
+            <h1 class="mb-2 text-2xl font-semibold md:text-3xl">
+              Full Stack Developer Intern
+            </h1>
           </div>
-          <h2 class="mb-2 text-xl md:text-2xl">
-            VM Coder Technology Solutions Pvt. Ltd.
-            <br />
-            <span class="text-base font-normal md:text-lg"
-              >Noida Uttar Pradesh</span
-            >
-          </h2>
-          <ol class="space-y-4 list-decimal list-inside">
-            <li class="text-lg text-[#717171]">
-              Responsibilities:
-              <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
-                <li>
-                  Crafted user-friendly interfaces, prioritizing responsive
-                  design for various devices, ensuring seamless interactions.
-                </li>
-                <li>
-                  Designed efficient database structures, implemented secure
-                  authentication, and ensured GDPR compliance.
-                </li>
-                <li>
-                  Developed a scalable back-end architecture, optimized queries,
-                  and implemented load balancing for peak traffic.
-                </li>
-              </ul>
-            </li>
-            <li class="text-lg text-[#717171]">
-              Accomplishments:
-              <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
-                <li>
-                  Implemented real-time notifications, boosting user engagement
-                  by 40%.
-                </li>
-                <li>
-                  Built a user-friendly CMS, incorporated a rating system, and
-                  achieved 99.9% uptime.
-                </li>
-                <li>
-                  Reduced server response times by 25%, conducted security
-                  audits, and maintained data security and high availability.
-                </li>
-              </ul>
-            </li>
-          </ol>
+          <div class="mb-2 -mt-1">2023/06 - 2023/07</div>
         </div>
-        <div class="border-2 rounded-md bg-[#FFFFFF] p-5">
-          <div class="flex flex-col justify-between md:flex-row">
-            <div>
-              <h1 class="mb-2 text-2xl font-semibold md:text-3xl">
-                Backend Developer Intern
-              </h1>
-            </div>
-            <div class="mb-2 -mt-1">2022/10 - 2022/11</div>
+        <h2 class="mb-2 text-xl md:text-2xl">
+          VM Coder Technology Solutions Pvt. Ltd.
+          <br />
+          <span class="text-base font-normal md:text-lg">Noida Uttar Pradesh</span>
+        </h2>
+        <ol class="space-y-4 list-decimal list-inside">
+          <li class="text-lg text-[#717171]">
+            Responsibilities:
+            <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
+              <li>
+                Crafted user-friendly interfaces, prioritizing responsive
+                design for various devices, ensuring seamless interactions.
+              </li>
+              <li>
+                Designed efficient database structures, implemented secure
+                authentication, and ensured GDPR compliance.
+              </li>
+              <li>
+                Developed a scalable back-end architecture, optimized queries,
+                and implemented load balancing for peak traffic.
+              </li>
+            </ul>
+          </li>
+          <li class="text-lg text-[#717171]">
+            Accomplishments:
+            <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
+              <li>
+                Implemented real-time notifications, boosting user engagement
+                by 40%.
+              </li>
+              <li>
+                Built a user-friendly CMS, incorporated a rating system, and
+                achieved 99.9% uptime.
+              </li>
+              <li>
+                Reduced server response times by 25%, conducted security
+                audits, and maintained data security and high availability.
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <div class="border-2 rounded-md bg-[#FFFFFF] p-5">
+        <div class="flex flex-col justify-between md:flex-row">
+          <div>
+            <h1 class="mb-2 text-2xl font-semibold md:text-3xl">
+              Backend Developer Intern
+            </h1>
           </div>
-          <h2 class="mb-2 text-xl md:text-2xl">
-            DareFit
-            <br />
-            <span class="text-base font-normal md:text-lg">Remote</span>
-          </h2>
-          <ol class="space-y-4 list-decimal list-inside">
-            <li class="text-lg text-[#717171]">
-              Responsibilities:
-              <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
-                <li>
-                  Ensure Node.js server runs smoothly, handling updates and
-                  issue resolution for optimal performance.
-                </li>
-                <li>
-                  Design and manage MongoDB databases, maintaining data security
-                  and schema development.
-                </li>
-                <li>
-                  Develop and maintain Node.js APIs, integrating external
-                  services for frontend and other components.
-                </li>
-              </ul>
-            </li>
-            <li class="text-lg text-[#717171]">
-              Accomplishments:
-              <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
-                <li>
-                  Improved system scalability through query optimization,
-                  caching, and load balancing strategies.
-                </li>
-                <li>
-                  Enhanced application security with input validation, OAuth2,
-                  and security libraries for user authentication and
-                  authorization.
-                </li>
-                <li>
-                  Implemented monitoring tools like New Relic, ELK stack for log
-                  analysis, and custom error handling mechanisms for prompt
-                  issue resolution.
-                </li>
-              </ul>
-            </li>
-          </ol>
+          <div class="mb-2 -mt-1">2022/10 - 2022/11</div>
         </div>
+        <h2 class="mb-2 text-xl md:text-2xl">
+          DareFit
+          <br />
+          <span class="text-base font-normal md:text-lg">Remote</span>
+        </h2>
+        <ol class="space-y-4 list-decimal list-inside">
+          <li class="text-lg text-[#717171]">
+            Responsibilities:
+            <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
+              <li>
+                Ensure Node.js server runs smoothly, handling updates and
+                issue resolution for optimal performance.
+              </li>
+              <li>
+                Design and manage MongoDB databases, maintaining data security
+                and schema development.
+              </li>
+              <li>
+                Develop and maintain Node.js APIs, integrating external
+                services for frontend and other components.
+              </li>
+            </ul>
+          </li>
+          <li class="text-lg text-[#717171]">
+            Accomplishments:
+            <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
+              <li>
+                Improved system scalability through query optimization,
+                caching, and load balancing strategies.
+              </li>
+              <li>
+                Enhanced application security with input validation, OAuth2,
+                and security libraries for user authentication and
+                authorization.
+              </li>
+              <li>
+                Implemented monitoring tools like New Relic, ELK stack for log
+                analysis, and custom error handling mechanisms for prompt
+                issue resolution.
+              </li>
+            </ul>
+          </li>
+        </ol>
       </div>
-    </section>
-    <section id="portfolio" class="min-h-screen mt-10">
+    </div>
+  </section>
+  <section id="portfolio" class="min-h-screen mt-10">
+    <div>
+      <h1 class="text-3xl text-center md:text-4xl">My Projects</h1>
+      <hr class="w-24 h-1 mx-auto my-2 bg-green-500 border-0 rounded md:w-32 md:my-2" />
+    </div>
+    <div class="grid gap-5 p-4 md:grid-cols-4 md:gap-5">
+      <div class="p-4 bg-white border-2 rounded-xl">
+        <a href="https://github.com/arihantjain916/Academic-Records-Management-System" target="_blank"><img
+            class="md:h-[180px] md:w-full md:object-fill"
+            src="https://img.freepik.com/free-vector/online-education-isometric-flowchart-with-human-characters-books-computer-devices-purple_1284-31780.jpg?t=st=1693125875~exp=1693126475~hmac=d54eb7adcfd997c90ee9464108655f2377ad4fea807863099047abfc523b44a3"
+            alt="Project1" /></a>
+        <a href="https://github.com/arihantjain916/Academic-Records-Management-System" target="_blank">
+          <h1 class="mt-5 mb-2 text-3xl font-semibold">
+            Academic Records Management System
+          </h1>
+        </a>
+        <p class="text-[#676766]">
+          This powerful web application is designed to efficiently manage and
+          showcase student details for educational institutions, including
+          schools, colleges, and universities. The project focuses on the
+          backend implementation using Node.js, providing a robust foundation
+          for handling student information and streamlining administrative
+          tasks.
+        </p>
+      </div>
+      <div class="p-4 bg-white border-2 rounded-xl">
+        <a href="https://github.com/arihantjain916/Book-Rental-System" target="_blank"><img
+            class="md:h-[180px] md:w-full md:object-cover"
+            src="https://img.freepik.com/premium-vector/ebook-mobile-device-with-bookmark-design-concept_7087-1815.jpg?w=740"
+            alt="Project2" /></a>
+        <a href="https://github.com/arihantjain916/Book-Rental-System" target="_blank">
+          <h1 class="mt-5 mb-2 text-3xl font-semibold">Book Rental System</h1>
+        </a>
+        <p class="text-[#676766]">
+          This API allows users to rent books from a library. Admins can add
+          books and authors, and automatically calculate fines for books that
+          are returned after the due date. The system is designed to be
+          user-friendly and efficient. Users can easily search for books by
+          title, author, or genre.. Admins can easily add new books and
+          authors to the system. The system also automatically calculates
+          fines for books that are returned after the due date .
+        </p>
+      </div>
+      <div class="p-4 bg-white border-2 rounded-xl">
+        <a href="https://github.com/arihantjain916/real-time-chat-app" target="_blank"><img
+            class="md:h-[180px] md:w-full md:object-cover"
+            src="https://img.freepik.com/free-vector/conversation-concept-illustration_114360-1305.jpg?w=740&t=st=1693125655~exp=1693126255~hmac=3edf411b59e63a084ebeaa48ceb03784700e06bd71a6db883d50e7c4ff23d41a"
+            alt="Project4" /></a>
+        <a href="https://github.com/arihantjain916/real-time-chat-app" target="_blank">
+          <h1 class="mt-5 mb-2 text-3xl font-semibold">Real Time Chat App</h1>
+        </a>
+        <p class="text-[#676766]">
+          Built a Node.js chat application that uses Socket.IO and MongoDB to
+          allow users to chat with each other in real-time. The app is easy to
+          use and supports emojis, making it a great way to stay connected
+          with friends and family. The app is built using a modular
+          architecture, making it easy to extend and customize. The app is
+          scalable, so it can handle a large number of users.
+        </p>
+      </div>
+      <div class="p-4 bg-white border-2 rounded-xl">
+        <a href="https://github.com/arihantjain916/E-commerce-API-for-Product-Storage-and-Purchase"><img
+            class="md:h-[180px]"
+            src="https://img.freepik.com/free-vector/ecommerce-web-page-concept-illustration_114360-8204.jpg?w=2000"
+            alt="Project3" /></a>
+        <a href="https://github.com/arihantjain916/E-commerce-API-for-Product-Storage-and-Purchase">
+          <h1 class="mt-5 mb-2 text-3xl font-semibold">
+            E-Commerce API for Product Storage and Purchase
+          </h1>
+        </a>
+        <p class="text-[#676766]">
+          This project is an e-commerce API that uses Node.js and MongoDB to
+          store product information and allow users to purchase products. The
+          API is designed to be scalable, secure, and extensible, making it a
+          valuable tool for developers who want to build e-commerce
+          applications. The API uses a RESTful architecture, making it easy to
+          integrate with other applications. The API is secured using HTTPS,
+          ensuring that user data is protected. The API is extensible,
+          allowing developers to add new features or customize the API to
+          their specific needs.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="min-h-0 p-5 mt-10">
+    <div>
+      <h1 class="text-3xl text-center md:text-4xl">Get in Touch</h1>
+      <hr class="w-24 h-1 mx-auto my-2 bg-green-500 border-0 rounded md:w-32 md:my-2" />
+    </div>
+    <div class="flex flex-col p-5 mt-0 space-y-10 text-center md:flex-row md:justify-around md:content-center">
+      <div class="md:flex md:flex-col md:justify-center md:items-center mt-[40px]">
+        <ion-icon class="text-3xl" name="location-sharp"></ion-icon>
+        <h2 class="mt-2 mb-2 text-3xl">Address</h2>
+        <p class="text-xl mb-2 text-[#717170]">Jaipur, Rajasthan</p>
+        <p class="text-xl text-[#717170]">India</p>
+      </div>
+      <hr class="bg-gray-800 dark:bg-grey-800 h-0.5 md:hidden" />
       <div>
-        <h1 class="text-3xl text-center md:text-4xl">My Projects</h1>
-        <hr
-          class="w-24 h-1 mx-auto my-2 bg-green-500 border-0 rounded md:w-32 md:my-2"
-        />
+        <ion-icon class="text-3xl" name="call-sharp"></ion-icon>
+        <h2 class="mt-2 mb-2 text-3xl">Contact Number</h2>
+        <a class="text-xl text-[#717170]" href="tel:+919672670732">+919672670732</a>
       </div>
-      <div class="grid gap-5 p-4 md:grid-cols-4 md:gap-5">
-        <div class="p-4 bg-white border-2 rounded-xl">
-          <a href="https://github.com/arihantjain916/Academic-Records-Management-System" target="_blank"
-            ><img
-              class="md:h-[180px] md:w-full md:object-fill"
-              src="https://img.freepik.com/free-vector/online-education-isometric-flowchart-with-human-characters-books-computer-devices-purple_1284-31780.jpg?t=st=1693125875~exp=1693126475~hmac=d54eb7adcfd997c90ee9464108655f2377ad4fea807863099047abfc523b44a3"
-              alt="Project1"
-          /></a>
-          <a href="https://github.com/arihantjain916/Academic-Records-Management-System" target="_blank">
-            <h1 class="mt-5 mb-2 text-3xl font-semibold">
-              Academic Records Management System
-            </h1>
-          </a>
-          <p class="text-[#676766]">
-            This powerful web application is designed to efficiently manage and
-            showcase student details for educational institutions, including
-            schools, colleges, and universities. The project focuses on the
-            backend implementation using Node.js, providing a robust foundation
-            for handling student information and streamlining administrative
-            tasks.
-          </p>
-        </div>
-        <div class="p-4 bg-white border-2 rounded-xl">
-          <a href="https://github.com/arihantjain916/Book-Rental-System" target="_blank"
-            ><img
-              class="md:h-[180px] md:w-full md:object-cover"
-              src="https://img.freepik.com/premium-vector/ebook-mobile-device-with-bookmark-design-concept_7087-1815.jpg?w=740"
-              alt="Project2"
-          /></a>
-          <a href="https://github.com/arihantjain916/Book-Rental-System" target="_blank">
-            <h1 class="mt-5 mb-2 text-3xl font-semibold">Book Rental System</h1>
-          </a>
-          <p class="text-[#676766]">
-            This API allows users to rent books from a library. Admins can add
-            books and authors, and automatically calculate fines for books that
-            are returned after the due date. The system is designed to be
-            user-friendly and efficient. Users can easily search for books by
-            title, author, or genre.. Admins can easily add new books and
-            authors to the system. The system also automatically calculates
-            fines for books that are returned after the due date .
-          </p>
-        </div>
-        <div class="p-4 bg-white border-2 rounded-xl">
-          <a href="https://github.com/arihantjain916/real-time-chat-app" target="_blank"
-            ><img
-              class="md:h-[180px] md:w-full md:object-cover"
-              src="https://img.freepik.com/free-vector/conversation-concept-illustration_114360-1305.jpg?w=740&t=st=1693125655~exp=1693126255~hmac=3edf411b59e63a084ebeaa48ceb03784700e06bd71a6db883d50e7c4ff23d41a"
-              alt="Project4"
-          /></a>
-          <a href="https://github.com/arihantjain916/real-time-chat-app" target="_blank">
-            <h1 class="mt-5 mb-2 text-3xl font-semibold">Real Time Chat App</h1>
-          </a>
-          <p class="text-[#676766]">
-            Built a Node.js chat application that uses Socket.IO and MongoDB to
-            allow users to chat with each other in real-time. The app is easy to
-            use and supports emojis, making it a great way to stay connected
-            with friends and family. The app is built using a modular
-            architecture, making it easy to extend and customize. The app is
-            scalable, so it can handle a large number of users.
-          </p>
-        </div>
-        <div class="p-4 bg-white border-2 rounded-xl">
-          <a href="https://github.com/arihantjain916/E-commerce-API-for-Product-Storage-and-Purchase" target="_blank"
-            ><img
-              class="md:h-[180px]"
-              src="https://img.freepik.com/free-vector/ecommerce-web-page-concept-illustration_114360-8204.jpg?w=2000"
-              alt="Project3"
-          /></a>
-          <a href="https://github.com/arihantjain916/E-commerce-API-for-Product-Storage-and-Purchase" target="_blank">
-            <h1 class="mt-5 mb-2 text-3xl font-semibold">
-              E-Commerce API for Product Storage and Purchase
-            </h1>
-          </a>
-          <p class="text-[#676766]">
-            This project is an e-commerce API that uses Node.js and MongoDB to
-            store product information and allow users to purchase products. The
-            API is designed to be scalable, secure, and extensible, making it a
-            valuable tool for developers who want to build e-commerce
-            applications. The API uses a RESTful architecture, making it easy to
-            integrate with other applications. The API is secured using HTTPS,
-            ensuring that user data is protected. The API is extensible,
-            allowing developers to add new features or customize the API to
-            their specific needs.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section id="contact" class="min-h-0 p-5 mt-10">
+      <hr class="bg-gray-800 dark:bg-grey-800 h-0.5 md:hidden" />
       <div>
-        <h1 class="text-3xl text-center md:text-4xl">Get in Touch</h1>
-        <hr
-          class="w-24 h-1 mx-auto my-2 bg-green-500 border-0 rounded md:w-32 md:my-2"
-        />
+        <ion-icon class="text-3xl" name="mail-sharp"></ion-icon>
+        <h2 class="mt-2 mb-2 text-3xl">Email Address</h2>
+        <a class="text-xl text-[#717170]" href="mailto:arihantj916@gmail.com">arihantj916@gmail.com</a>
       </div>
-      <div
-        class="flex flex-col p-5 mt-0 space-y-10 text-center md:flex-row md:justify-around md:content-center"
-      >
-        <div
-          class="md:flex md:flex-col md:justify-center md:items-center mt-[40px]"
-        >
-          <ion-icon class="text-3xl" name="location-sharp"></ion-icon>
-          <h2 class="mt-2 mb-2 text-3xl">Address</h2>
-          <p class="text-xl mb-2 text-[#717170]">Jaipur, Rajasthan</p>
-          <p class="text-xl text-[#717170]">India</p>
-        </div>
-        <hr class="bg-gray-800 dark:bg-grey-800 h-0.5 md:hidden" />
-        <div>
-          <ion-icon class="text-3xl" name="call-sharp"></ion-icon>
-          <h2 class="mt-2 mb-2 text-3xl">Contact Number</h2>
-          <a class="text-xl text-[#717170]" href="tel:+919672670732"
-            >+919672670732</a
-          >
-        </div>
-        <hr class="bg-gray-800 dark:bg-grey-800 h-0.5 md:hidden" />
-        <div>
-          <ion-icon class="text-3xl" name="mail-sharp"></ion-icon>
-          <h2 class="mt-2 mb-2 text-3xl">Email Address</h2>
-          <a class="text-xl text-[#717170]" href="mailto:arihantj916@gmail.com"
-            >arihantj916@gmail.com</a
-          >
-        </div>
+    </div>
+  </section>
+  <footer
+    class="flex flex-col items-center justify-center w-full min-h-0 p-5 space-y-10 text-white bg-black md:flex-row md:justify-between md:h-52">
+    <div class="flex space-x-8 mt-[41px]">
+      <div class="text-3xl">
+        <ion-icon name="logo-instagram"></ion-icon>
       </div>
-    </section>
-    <footer
-      class="flex flex-col items-center justify-center w-full min-h-0 p-5 space-y-10 text-white bg-black md:flex-row md:justify-between md:h-52"
-    >
-      <div class="flex space-x-8 mt-[41px]">
-        <div class="text-3xl">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </div>
-        <div class="text-3xl">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </div>
-        <div class="text-3xl">
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </div>
+      <div class="text-3xl">
+        <ion-icon name="logo-twitter"></ion-icon>
       </div>
-      <div>
-        <h1 class="text-3xl hover:underline">Arihant Jain</h1>
+      <div class="text-3xl">
+        <ion-icon name="logo-linkedin"></ion-icon>
       </div>
-      <div>
-        <a href="mailto:arihantj916@gmail.com"
-          ><h4 class="text-xl">arihantj916@gmail.com</h4></a
-        >
-      </div>
-    </footer>
-    <button
-      class="fixed bottom-5 right-8"
-      onclick="topFunction()"
-      id="myBtn"
-      title="Go to Top"
-    >
-      <ion-icon class="text-3xl bg-[#FAF7F5]" name="arrow-up-outline"></ion-icon>
-    </button>
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="script.js"></script>
-  </body>
+    </div>
+    <div>
+      <h1 class="text-3xl hover:underline">Arihant Jain</h1>
+    </div>
+    <div>
+      <a href="mailto:arihantj916@gmail.com">
+        <h4 class="text-xl">arihantj916@gmail.com</h4>
+      </a>
+    </div>
+  </footer>
+  <button class="fixed bottom-5 right-8" onclick="topFunction()" id="myBtn" title="Go to Top">
+    <ion-icon class="text-3xl bg-[#FAF7F5] " name="arrow-up-outline"></ion-icon>
+  </button>
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
