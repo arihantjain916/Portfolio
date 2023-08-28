@@ -3,11 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
     <link rel="stylesheet" href="output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <title>Portfolio</title>
   </head>
 
@@ -18,9 +46,22 @@
     @scroll.window="window.pageYOffset >= 50 ? scrolledFromTop = true : scrolledFromTop = false"
     :class="{
 'overflow-hidden': navOpen,
-'overflow-scroll': !navOpen
 }"
   >
+    <style>
+      #loader h1 {
+        font-family: "Black Ops One", cursive;
+      }
+    </style>
+
+    <div
+      id="loader"
+      class="h-[100vh] w-full bg-[#DDDDDD] fixed z-[99] flex flex-col items-center justify-center"
+    >
+      <h1 class="md:text-[100px] text-[65px] font-[100]">Loading...</h1>
+      <h1 class="md:text-[100px] text-[65px] font-[100]" id="time">0%</h1>
+    </div>
+
     <header
       class="flex items-center justify-between w-full h-24 p-4 transition-all duration-200 md:px-12"
       :class="{'h-24': !scrolledFromTop, 'h-14': scrolledFromTop}"
@@ -29,19 +70,14 @@
         <h1 class="text-3xl font-bold underline">Arihant Jain</h1>
       </a>
       <nav>
-        <button class="md:hidden" @click="navOpen = !navOpen">
+        <button id="icon" class="md:hidden" @click="navOpen = !navOpen">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-8 w-8 text-[#F28C84]"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+            viewBox="0 0 448 512"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
+              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
             />
           </svg>
         </button>
@@ -123,7 +159,7 @@
           <button
             class="border-0 mt-5 text-white rounded-md px-4 py-2 bg-[#2270E2]"
           >
-            Contact Me
+            <a href="#contact">Contact Me</a>
           </button>
         </div>
         <img
@@ -330,13 +366,18 @@
       </div>
       <div class="grid gap-5 p-4 md:grid-cols-4 md:gap-5">
         <div class="p-4 bg-white border-2 rounded-xl">
-          <a href=""
+          <a
+            href="https://github.com/arihantjain916/Academic-Records-Management-System"
+            target="_blank"
             ><img
               class="md:h-[180px] md:w-full md:object-fill"
               src="https://img.freepik.com/free-vector/online-education-isometric-flowchart-with-human-characters-books-computer-devices-purple_1284-31780.jpg?t=st=1693125875~exp=1693126475~hmac=d54eb7adcfd997c90ee9464108655f2377ad4fea807863099047abfc523b44a3"
               alt="Project1"
           /></a>
-          <a href="">
+          <a
+            href="https://github.com/arihantjain916/Academic-Records-Management-System"
+            target="_blank"
+          >
             <h1 class="mt-5 mb-2 text-3xl font-semibold">
               Academic Records Management System
             </h1>
@@ -351,13 +392,18 @@
           </p>
         </div>
         <div class="p-4 bg-white border-2 rounded-xl">
-          <a href=""
+          <a
+            href="https://github.com/arihantjain916/Book-Rental-System"
+            target="_blank"
             ><img
               class="md:h-[180px] md:w-full md:object-cover"
               src="https://img.freepik.com/premium-vector/ebook-mobile-device-with-bookmark-design-concept_7087-1815.jpg?w=740"
               alt="Project2"
           /></a>
-          <a href="">
+          <a
+            href="https://github.com/arihantjain916/Book-Rental-System"
+            target="_blank"
+          >
             <h1 class="mt-5 mb-2 text-3xl font-semibold">Book Rental System</h1>
           </a>
           <p class="text-[#676766]">
@@ -371,13 +417,18 @@
           </p>
         </div>
         <div class="p-4 bg-white border-2 rounded-xl">
-          <a href=""
+          <a
+            href="https://github.com/arihantjain916/real-time-chat-app"
+            target="_blank"
             ><img
               class="md:h-[180px] md:w-full md:object-cover"
               src="https://img.freepik.com/free-vector/conversation-concept-illustration_114360-1305.jpg?w=740&t=st=1693125655~exp=1693126255~hmac=3edf411b59e63a084ebeaa48ceb03784700e06bd71a6db883d50e7c4ff23d41a"
               alt="Project4"
           /></a>
-          <a href="">
+          <a
+            href="https://github.com/arihantjain916/real-time-chat-app"
+            target="_blank"
+          >
             <h1 class="mt-5 mb-2 text-3xl font-semibold">Real Time Chat App</h1>
           </a>
           <p class="text-[#676766]">
@@ -390,13 +441,16 @@
           </p>
         </div>
         <div class="p-4 bg-white border-2 rounded-xl">
-          <a href=""
+          <a
+            href="https://github.com/arihantjain916/E-commerce-API-for-Product-Storage-and-Purchase"
             ><img
               class="md:h-[180px]"
               src="https://img.freepik.com/free-vector/ecommerce-web-page-concept-illustration_114360-8204.jpg?w=2000"
               alt="Project3"
           /></a>
-          <a href="">
+          <a
+            href="https://github.com/arihantjain916/E-commerce-API-for-Product-Storage-and-Purchase"
+          >
             <h1 class="mt-5 mb-2 text-3xl font-semibold">
               E-Commerce API for Product Storage and Purchase
             </h1>
@@ -469,9 +523,9 @@
         <h1 class="text-3xl hover:underline">Arihant Jain</h1>
       </div>
       <div>
-        <a href="mailto:arihantj916@gmail.com"
-          ><h4 class="text-xl">arihantj916@gmail.com</h4></a
-        >
+        <a href="mailto:arihantj916@gmail.com">
+          <h4 class="text-xl">arihantj916@gmail.com</h4>
+        </a>
       </div>
     </footer>
     <button
@@ -480,7 +534,10 @@
       id="myBtn"
       title="Go to Top"
     >
-      <ion-icon class="text-3xl bg-white" name="arrow-up-outline"></ion-icon>
+      <ion-icon
+        class="text-3xl bg-[#FAF7F5]"
+        name="arrow-up-outline"
+      ></ion-icon>
     </button>
     <script src="//unpkg.com/alpinejs" defer></script>
     <script
@@ -490,6 +547,12 @@
     <script
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
     <script src="script.js"></script>
   </body>
